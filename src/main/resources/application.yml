@@ -2,9 +2,10 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://squirrel.ohgiraffers.com:3360/ketchup
-    username: hikdt2312
-    password: hikdt2312
+#    url: jdbc:mysql://squirrel.ohgiraffers.com:3360/ketchup // 프로젝트 공용DB
+    url: jdbc:mysql://127.0.0.1:3306/ketchup_local
+    username: root
+    password: OL1202043jlee!
   servlet:
     multipart:
       enabled: true
@@ -53,6 +54,11 @@ jwt:
   key: asdkfjlkawdsjfw390r82309rjlkasdfja213498dlk
   time: 86400000
 
+# GetStream Chat API 설정
+stream:
+  api:
+    key: zyjcvjpf4v5v
+    secret: nt23g88e65n9tfcp43sys7p3c2zm44hsqgnrq4n2y9pwyrgx8ejpvwsby7t7ddsv
 
 # db connection info & fileupload config
 #spring:

@@ -44,22 +44,41 @@ public class WebSecurityConfig {
      * @return SecurityFilterChain
      * @throws Exception
      */
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        http.csrf(AbstractHttpConfigurer::disable)  //사이트 위조 방지//원래는 disable 하면 안된다.
+//                .addFilterBefore(jwtAuthorizationFilter(), BasicAuthenticationFilter.class) //토큰인증 후 사용자 인증정보 셋팅해줌
+//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+//                .formLogin(form -> form.disable())  //기본로그인창 x // 우리가 만든 로그인창 써!
+//                .addFilterBefore(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class) //로그인 성공과 실패후 핸들러 등록
+//                .httpBasic(basic -> basic.disable()) // 기본인증에대한 인증철자 x //우리가 지정해주는걸로 진행해
+//                .headers()
+//                .frameOptions()
+//                .sameOrigin()
+//                .and()
+//                .authorizeRequests()
+//                .anyRequest().permitAll();
+//
+////        http.authorizeHttpRequests(auth ->{
+////            auth.requestMatchers("/Email/**","/verifyEmail/**").permitAll();
+////        });
+//
+//        return http.build();
+//    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)  //사이트 위조 방지//원래는 disable 하면 안된다.
-                .addFilterBefore(jwtAuthorizationFilter(), BasicAuthenticationFilter.class) //토큰인증 후 사용자 인증정보 셋팅해줌
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .formLogin(form -> form.disable())  //기본로그인창 x // 우리가 만든 로그인창 써!
-                .addFilterBefore(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class) //로그인 성공과 실패후 핸들러 등록
-                .httpBasic(basic -> basic.disable()); // 기본인증에대한 인증철자 x //우리가 지정해주는걸로 진행해
-
-//        http.authorizeHttpRequests(auth ->{
-//            auth.requestMatchers("/Email/**","/verifyEmail/**").permitAll();
-//        });
+        http
+                .cors().and() // Enable CORS
+                .csrf().disable() // Disable CSRF
+                .authorizeRequests()
+                .anyRequest().permitAll() // Permit all requests
+                .and()
+                .headers()
+                .frameOptions().sameOrigin(); // Allow frames from same origin
 
         return http.build();
     }
-
     /**
      * description. 사용자 요청(request) 시 수행되는 메소드
      *

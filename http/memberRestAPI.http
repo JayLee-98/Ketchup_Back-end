@@ -114,11 +114,11 @@ Content-Disposition: form-data; name="memberInfo"
 Content-Type: application/json
 
 {
-  "memberNo": "1",
+  "memberNo": "2405001",
   "memberName": "이후영",
-  "memberPW" : "1111",
+  "memberPW" : "1234qwer!",
   "phone": "010-1111-1111",
-  "birthDate": "1111-11-11",
+  "birthDate": "1990-11-11",
   "gender": "M",
   "address" : "서울시 강동구 암사동",
   "privateEmail" : "gndud3158@naver.com",
@@ -150,11 +150,11 @@ Content-Disposition: form-data; name="memberInfo"
 Content-Type: application/json
 
 {
-  "memberNo": "2",
+  "memberNo": "2405002",
   "memberName": "박다은",
-  "memberPW" : "2222",
+  "memberPW" : "1234qwer!",
   "phone": "010-2222-2222",
-  "birthDate": "2222-12-22",
+  "birthDate": "1999-12-22",
   "gender": "F",
   "address" : "지구어딘가",
   "privateEmail" : "22222222@naver.com",
@@ -184,11 +184,11 @@ Content-Disposition: form-data; name="memberInfo"
 Content-Type: application/json
 
 {
- "memberNo": "3",
+ "memberNo": "2405003",
   "memberName": "이진우",
-  "memberPW" : "3333",
+  "memberPW" : "1234qwer!",
   "phone": "010-3333-3333",
-  "birthDate": "3333-33-33",
+  "birthDate": "1998-06-23",
   "gender": "M",
   "address" : "지구어딘가",
   "privateEmail" : "33333333@naver.com",
@@ -216,11 +216,11 @@ Content-Disposition: form-data; name="memberInfo"
 Content-Type: application/json
 
 {
-  "memberNo": "4",
+  "memberNo": "2405004",
   "memberName": "최승욱",
-  "memberPW" : "4444",
+  "memberPW" : "1234qwer!",
   "phone": "010-4444-4444",
-  "birthDate": "4444-44-44",
+  "birthDate": "2000-05-20",
   "gender": "M",
   "address" : "지구어딘가",
   "privateEmail" : "44444444@naver.com",
@@ -248,11 +248,11 @@ Content-Disposition: form-data; name="memberInfo"
 Content-Type: application/json
 
 {
-  "memberNo": "5",
+  "memberNo": "2405005",
   "memberName": "김현지",
-  "memberPW" : "5555",
+  "memberPW" : "1234qwer!",
   "phone": "010-5555-5555",
-  "birthDate": "5555-55-55",
+  "birthDate": "1999-08-19",
   "gender": "F",
   "address" : "지구어딘가",
   "privateEmail" : "555555555@naver.com",
@@ -309,7 +309,7 @@ Content-Type: application/json
 Accept: */*
 
 {
-  "memberNo": "5",
+  "memberNo": "2405003",
   "memberPW": "1234qwer!"
 }
 
@@ -424,7 +424,7 @@ Accept: */*
 PUT http://localhost:8080/members
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 Accept: */*
-Authorization: Bearer eyJkYXRlIjoxNzE2MTcyOTE5OTI3LCJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJwb3NpdGlvbk5hbWUiOiLrjIDtkZwiLCJkZXBObyI6MywiaW1nVXJsIjoiMmZlZDJiYzMyZWZiNDlkYWE1OTM5NTNmZTk0YjM4ZTgucG5nIiwibWVtYmVyTm8iOiIzIiwicG9zaXRpb25MZXZlbCI6Mywic3ViIjoia2V0Y2h1cCB0b2tlbiA6IDMiLCJyb2xlIjoiTFYzIiwicG9zaXRpb25TdGF0dXMiOiJZIiwibWVtYmVyTmFtZSI6IuydtOynhOyasCIsInBvc2l0aW9uTm8iOjMsImV4cCI6MTcxNjI1OTMxOSwiZGVwTmFtZSI6Iuq4sO2aje2MgCJ9.ggEAYs2tTgTrT4q54vRgsigqsp2lkKF8IvUVqgfGprE
+Authorization: Bearer eyJkYXRlIjoxNzE4MDg5NDQ4MTQ4LCJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJkZXBObyI6MSwicG9zaXRpb25MZXZlbCI6Miwic3ViIjoia2V0Y2h1cCB0b2tlbiA6IDI0MDUwMDEiLCJyb2xlIjoiTFYyIiwiaXNGaXJzdExvZ2luIjoiWSIsIm1lbWJlck5hbWUiOiLsnbTtm4TsmIEiLCJkZXBOYW1lIjoi6rCc67Cc7YyAIiwicG9zaXRpb25OYW1lIjoi7YyA7J6lIiwiaW1nVXJsIjoiZjAyNDFhODk5YTVjNGQ3N2I5ZTdmYWVjNzY2M2Y3ZGUucG5nIiwibWVtYmVyTm8iOiIyNDA1MDAxIiwicG9zaXRpb25TdGF0dXMiOiJZIiwicG9zaXRpb25ObyI6MiwiZXhwIjoxNzE4MTc1ODQ4fQ.IFLhiFwUgQkz02nY6mToFfsY0a4vGVbFyUrB1aWlliA
 
 
 --WebAppBoundary
@@ -432,12 +432,12 @@ Content-Disposition: form-data; name="memberInfo"
 Content-Type: application/json
 
 {
-  "memberNo": "1",
-  "memberName": "수정두번한이후영",
-  "phone": "010-3228-3158",
+  "memberNo": "2405002",
+  "memberName": "박다은",
+  "phone": "01088077607",
   "address" : "지구어딘가",
-  "privateEmail" : "66666666@naver.com",
-  "companyEmail" : "66666666@ketchup.com",
+  "privateEmail" : "jayginwoolee98@gmail.com",
+  "companyEmail" : "22222222@ketchup.com",
   "department" : 2,
   "position" : 2,
   "account" : "29345876239485"

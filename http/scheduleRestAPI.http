@@ -9,20 +9,20 @@ Authorization: Bearer eyJkYXRlIjoxNzE2ODY5NTIyODQ1LCJ0eXBlIjoiand0IiwiYWxnIjoiSF
 ### 부서별 일정 등록
 POST http://localhost:8080/schedules/schedules
 Content-Type: application/json
-Authorization: Bearer eyJkYXRlIjoxNzE2ODY5NTIyODQ1LCJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJwb3NpdGlvbk5hbWUiOiLtjIDsnqUiLCJkZXBObyI6NSwiaW1nVXJsIjoiNzY1NWY5YzkxYjYyNDMxZjg4OTYyYmMxYjY4ZjIzZTUucG5nIiwibWVtYmVyTm8iOiI1IiwicG9zaXRpb25MZXZlbCI6Miwic3ViIjoia2V0Y2h1cCB0b2tlbiA6IDUiLCJyb2xlIjoiTFYyIiwicG9zaXRpb25TdGF0dXMiOiJZIiwibWVtYmVyTmFtZSI6Iuq5gO2YhOyngCIsInBvc2l0aW9uTm8iOjIsImV4cCI6MTcxNjk1NTkyMiwiZGVwTmFtZSI6IuuyleustO2MgCJ9.m8b0OyEAPfTpOuANoDMIGBju-SB6G3ck54ZTxbTNhag
+Authorization: Bearer eyJkYXRlIjoxNzE4MTcxMDUyOTExLCJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJkZXBObyI6MiwicG9zaXRpb25MZXZlbCI6Miwic3ViIjoia2V0Y2h1cCB0b2tlbiA6IDI0MDUwMDEiLCJyb2xlIjoiTFYyIiwiaXNGaXJzdExvZ2luIjoiTiIsIm1lbWJlck5hbWUiOiLsnbTtm4TsmIEiLCJkZXBOYW1lIjoi7J247IKs7YyAIiwicG9zaXRpb25OYW1lIjoi7YyA7J6lIiwiaW1nVXJsIjoiMWZlN2M0OWU3ZDRkNGI5NDg0Y2E3ZjhkNWU0OTRiMWEucG5nIiwibWVtYmVyTm8iOiIyNDA1MDAxIiwicG9zaXRpb25TdGF0dXMiOiJZIiwicG9zaXRpb25ObyI6MiwiZXhwIjoxNzE4MjU3NDUyfQ.0nJnYtfY99xDOQxl4OA5aK2YIqrMulIQgUb42UlY30A
 
 {
   "skdNo": null,
-  "dptNo": 3,
+  "dptNo": 1,
   "skdName": "scheduleRestAPI에서 보내는 일정2",
-  "skdStartDttm": "2024-05-10 18:00",
-  "skdEndDttm": "2024-05-10 20:00",
-  "skdLocation": "코스트코 광명점 5층 ㅇㅅㅇ 부장실",
+  "skdStartDttm": "2024-06-10 18:00",
+  "skdEndDttm": "2024-06-10 20:00",
+  "skdLocation": "코스트코 광명점 양승혜 부장실",
   "skdMemo": "새로 등록한 일정이 정상적으로 반영되었습니다.",
-  "authorId": "3",
-  "authorName": "이진우",
+  "authorId": "2405001",
+  "authorName": "이후영",
   "participants": [
-    {"participantNo": null, "participantName": "이진우", "participantMemberNo":  "3"}
+    {"participantNo": null, "participantName": "이후영", "participantMemberNo":  "2405001"}
   ]
 }
 

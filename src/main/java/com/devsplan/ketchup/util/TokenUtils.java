@@ -5,6 +5,8 @@ package com.devsplan.ketchup.util;
 import com.devsplan.ketchup.member.dto.MemberDTO;
 import com.devsplan.ketchup.member.entity.Member;
 import io.jsonwebtoken.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +22,8 @@ import java.util.Map;
  * */
 @Component
 public class TokenUtils {
+
+    private static final Logger logger = LoggerFactory.getLogger(TokenUtils.class);
 
     private static String jwtSecretKey; //시크릿키
     private static Long tokenValidateTime; //토큰만료 시간
@@ -104,7 +108,16 @@ public class TokenUtils {
                 .signWith(SignatureAlgorithm.HS256, createSignature())
                 .setExpiration(expireTime);
 
-        return builder.compact();
+        String token = builder.compact();
+        // 토큰 생성 후 클레임 출력
+        System.out.println("Generated Token: " + token);
+        printTokenClaims(token);
+        return token;
+    }
+
+    public static void printTokenClaims(String token) {
+        Claims claims = getClaimsFromToken(token);
+        claims.forEach((key, value) -> System.out.println(key + ": " + value));
     }
 
     /**
@@ -130,19 +143,20 @@ public class TokenUtils {
      */
     private static Map<String, Object> createClaims(MemberDTO member) {
         Map<String, Object> claims = new HashMap<>();
-
         claims.put("memberNo", member.getMemberNo());
-        claims.put("memberName",member.getMemberName());
+        claims.put("memberName", member.getMemberName());
         claims.put("positionNo", member.getPosition().getPositionNo());
         claims.put("positionName", member.getPosition().getPositionName());
         claims.put("positionLevel", member.getPosition().getPositionLevel());
         claims.put("positionStatus", member.getPosition().getPositionStatus());
-        claims.put("role", member.getPosition().getAuthority().getRole()); // 역할 가져오기
+        claims.put("role", member.getPosition().getAuthority().getRole());
         claims.put("depNo", member.getDepartment().getDepNo());
         claims.put("depName", member.getDepartment().getDepName());
         claims.put("imgUrl", member.getImgUrl());
         claims.put("isFirstLogin", member.getIsFirstLogin());
+        claims.put("user_id", member.getMemberNo()); // 추가한 필드
 
+        logger.debug("Claims: {}", claims);
 
         return claims;
     }
@@ -158,17 +172,10 @@ public class TokenUtils {
     }
 
     public static Claims decryptToken(String token){
-
-
         String jwtToken = token.substring(7);
 
         Claims claims = Jwts.parser().setSigningKey(jwtSecretKey).parseClaimsJws(jwtToken).getBody();
 
-
         return claims;
-
     }
-
-
-
 }
